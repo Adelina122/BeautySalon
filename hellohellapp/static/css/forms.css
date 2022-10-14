@@ -1,0 +1,161 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *::before, *::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus, :active {
+    outline: none;
+}
+
+a:focus, a:active {
+    outline: none;
+}
+
+nav, footer, header, aside {
+    display: block;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+body {
+    height: 100%;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+/*---------FORM-------------------------------------------------*/
+
+.form p {
+    margin-bottom: 20px;
+}
+
+.form label {
+    width: 180px;
+    float: left;
+    color: #999;
+    padding-top: 5px;
+}
+
+.form input, .form button {
+    width: 400px;
+}
+
+.form textarea {
+    width: 400px;
+    max-width: 400px;
+    min-width: 400px;
+    line-height: 150%;
+}
+
+.confirm {
+    float: none !important;
+}
+
+.form input[type="checkbox"], .form button[type="checkbox"]  {
+    width: auto;
+}
+
+.form input, .form button .form textarea, .form select {
+    padding: 9px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    background: #FFF url('bg.jpg') left top repeat-x;
+}
+
+.form input:hover, .form button:hover, .form textarea:hover, .form select:hover, .form input:focus, .form textarea:focus, .form select:focus {
+    border-color: #C9C9C9;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.form .reset input, .submit input, button {
+    width: auto;
+    background: #617798;
+    color: #FFF;
+    padding: 9px 15px;
+    border: 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form .submit .reset button:hover {
+    background: #2B415E;
+}
+
+.formTextRed {
+    color: red;
+}
+
+input:invalid {
+    box-shadow: 0 0 7px rgba(255, 1, 1, 0.534);
+}
+
+input,
+input:valid {
+	border-color: #ccc;
+}
+
+fieldset{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}

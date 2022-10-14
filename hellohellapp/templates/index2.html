@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <title>Услуги</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="icon" href="{% static 'images/icons1.png' %}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@100;300;400;500;600;700&family=Playfair+Display&family=Zen+Antique&family=Zen+Old+Mincho&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="container">
+                <!-- <div class="head">
+                    <img class="head__img" src="../pz2/img/crown2.png" alt="">
+                <div class="head__text">Beauty Salon</div>
+            </div> -->
+
+                <nav class="menu">
+ <div class="top">
+                    <a href="/" class="header__logo">
+                        <img class="head__img" src="{% static 'images/crown2.png' %}" alt="img">
+                        Afroditе
+                    </a>
+<!--                    <div class="site__name">Услуги</div>-->
+                </div>
+                    <ul class="menu__list">
+                        <li>
+                            <a href="/" class="menu__link">Главная</a>
+                        </li>
+                        <li><a href="/notmain2" class="menu__link">О салоне</a></li>
+                        <li><a class="menu__link active">Услуги</a></li>
+                        <li><a href="#" class="menu__link">Контакты</a>
+                            <ul class="sub-menu__list">
+                                <li><a href="#" class="sub-menu__link">Адрес</a></li>
+                                <li><a href="#" class="sub-menu__link">Телефон</a></li>
+                                <li><a href="/services" class="sub-menu__link">Для администрации</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+
+
+        <div class="page" style="background-image: url({% static 'images/as9.jfif' %})">
+            <div class="container">
+                <div class="page__inner">
+                    <div class="page__title">Наши Услуги</div>
+
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <section class="section">
+            <div class="container cont">
+
+                <div class="services">
+                    <div class="services__item">
+                        <div class="services__image1" style="background-image: url({% static 'images/3.jfif' %})">
+                        </div>
+                        <div class="services__text">Макияж</div>
+                    </div>
+                    <div class="services__item">
+                        <div class="services__image2" style="background-image: url({% static 'images/services4.jfif' %})">
+                        </div>
+                        <div class="services__text">Стрижка</div>
+                    </div>
+                    <div class="services__item">
+                        <div class="services__image3" style="background-image: url({% static 'images/services5.jfif' %})">
+                        </div>
+                        <div class="services__text">Маникюр</div>
+                    </div>
+                </div>
+                <div class = "formblock">
+                    <br>
+                    <h2 class="services__text3">Предоставляемые услуги</h2>
+                    <br>
+      {% for item in masters_services %}
+      <ul class="list">
+          <br>
+          <li class="services__text2">Название услуги - {{item.service.title}}</li>
+          <li class="services__text2">Описание услуги - {{item.service.content}}</li>
+          <li class="services__text2">Продолжительность услуги - {{item.serviceTime}} ч</li>
+          <li class="services__text2">Цена - {{item.price}} грн.</li>
+          <li class="services__text2">Имя мастера - {{item.master.masterName}}</li>
+          <li class="services__text2">Стаж работы - {{item.master.experience}} лет</li>
+          <li class="services__text2">Номер телефона - {{item.master.phone}}</li>
+          <li class="services__text2">Прошлое место работы - {{item.master.past}}</li>
+          <br>
+      </ul>
+        {% endfor %}
+    </div>
+            </div>
+        </section>
+
+
+        <section class="section sec">
+            <div class="container">
+
+                <div class="section__header">
+                    <h2 class="section__title head">Прайс</h2>
+                </div>
+
+                <table class="table">
+                    <tr>
+                        <td class="table-name" colspan="3">Маникюр</td>
+                    </tr>
+                    <tr>
+                        <td><span>Маникюр классический</span></td>
+                        <td>300 ₴</td>
+                        <td>350 ₴</td>
+                    </tr>
+                    <tr>
+                        <td><span>Покрытие гель лаком</span></td>
+                        <td>400 ₴</td>
+                        <td>500 ₴</td>
+                    </tr>
+                    <tr>
+                        <td><span>Снятие гель лака</span></td>
+                        <td>100 ₴</td>
+                        <td>150 ₴</td>
+                    </tr>
+                    <tr>
+                        <td class="table-name" colspan="3">Стрижка</td>
+                    </tr>
+                    <tr>
+                        <td><span>Стрижка мужская</span></td>
+                        <td>400 ₴</td>
+                        <td>500 ₴</td>
+                    </tr>
+                    <tr>
+                        <td><span>Стрижка женская</span></td>
+                        <td>600 ₴</td>
+                        <td>700 ₴</td>
+                    </tr>
+                    <tr>
+                        <td><span>Стрижка мужская под насадку</span></td>
+                        <td>300 ₴</td>
+                        <td>400 ₴</td>
+                    </tr>
+                    <tr>
+                        <td><span>Укладка по форме волос</span></td>
+                        <td>400 ₴</td>
+                        <td>450 ₴</td>
+                    </tr>
+                    <tr>
+                        <td class="table-name" colspan="3">Макияж</td>
+                    </tr>
+                    <td><span>Макияж дневной</span></td>
+                    <td>450 ₴</td>
+                    <td>500 ₴</td>
+                    </tr>
+                    <tr>
+                        <td><span>Макияж коктельный</span></td>
+                        <td>600 ₴</td>
+                        <td>700 ₴</td>
+                    </tr>
+                    <tr>
+                        <td><span>Макияж вечерний</span></td>
+                        <td>400 ₴</td>
+                        <td>450 ₴</td>
+                    </tr>
+                    <tr>
+                        <td><span>Окрашивание бровей</span></td>
+                        <td>300 ₴</td>
+                        <td>320 ₴</td>
+                    </tr>
+
+                </table>
+
+                <div class="section__explanation">*стоимость зависит от категории мастера и количества материалов,
+                    затраченных на услуг</div>
+
+            </div>
+        </section>
+
+        <div class="popup" id="mypopup">
+            <div class="popup__content">
+                <span class="close">&times;</span>
+                <h2>Отзыв принят!</h2>
+            </div>
+        </div>
+
+        <section class="form__body">
+            <div class="container">
+
+                <div class="section__header">
+                    <h2 class="section__title">Оставьте отзыв</h2>
+                </div>
+
+                <form name="form" method="post" class="form" onsubmit="show(); return false;">
+
+                    <p>
+                        <label for="lastname"><span class="formTextRed">*</span> Фамилия:</label>
+                        <input required type="text" name="lastname" id="lastname" />
+                    </p>
+
+                    <p>
+                        <label for="firstname"><span class="formTextRed">*</span> Имя:</label>
+                        <input required pattern="[A-Za-zА-Яа-яЁё]{2,}" type="text" name="firstname" id="firstname"
+                            class="invalid" />
+                    <div id="error"></div>
+                    </p>
+
+                    <p>
+                        <label for="middlename">Отчество:</label>
+                        <input type="text" name="middlename" id="middlename" />
+                    </p>
+
+                    <p>
+                        <label for="email"><span class="formTextRed">*</span> Email:</label>
+                        <input required type="mail" name="mail" id="mail" />
+                    </p>
+
+                    <p>
+                        <label for="master">Мастер:</label>
+                        <select name="master" id="master">
+                            <option value=""></option>
+                            <option value="Elena">Елена Кравец</option>
+                            <option value="Marina">Марина Бук</option>
+                            <option value="Sergyi">Сергей Андусенко</option>
+                            <option value="Alina">Алина Лужская</option>
+                        </select>
+                    </p>
+
+                    <!-- <p>
+                        <label for="mark"><span class="formTextRed">*</span>Оценка салона:</label>
+                        <datalist required name="mark" id="mark">
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </datalist>
+                    </p> -->
+                    <p>
+                        <label for="mark"><span class="formTextRed">*</span>Оценка салона:</label>
+                        <input type="text" id="t1" name="fruit" list="l1" required pattern="5|4|3|2|1">
+                        <datalist id="l1">
+                            <option>5</option>
+                            <option>4</option>
+                            <option>3</option>
+                            <option>2</option>
+                            <option>1</option>
+                        </datalist>
+                    </p>
+
+                    <p>
+                        <label for="comment"> Отзыв:</label>
+                        <textarea rows="10" name="comment" id="comment"></textarea>
+                    </p>
+
+                    <p>
+                        <input required type="checkbox" name="confirm" id="confirm" />
+                        <label for="confirm" class="confirm"><span class="formTextRed">*</span> Не возражаю против
+                            публикации моего
+                            отзыва на сайте в рекламных целях</label>
+                    </p>
+
+                    <fieldset class="button">
+                        <p class="submit">
+                            <!-- <input id="btn" type="submit" value="Отправить" /> -->
+                            <button id="btn" class="btn" type="submit">Отправить</button>
+                        </p>
+
+                        <p class="reset">
+                            <button id="btn2" class="btn2" type="reset">Очистить</button>
+                        </p>
+                    </fieldset>
+                </form>
+
+            </div>
+        </section>
+
+
+
+        <section class="section sign-in" style="background-image: url({% static 'images/back1.jfif' %})">
+            <div class="container">
+
+                <div class="section__header">
+                    <h2 class="section__title">Запись к мастеру</h2>
+                </div>
+
+                <div class="sign">
+                    <a href="/localstorage" class="page__button">Запись онлайн</a>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <footer class="footer">
+            <div class="container">
+
+                <div class="footer__header">
+                    <h2 class="footer__title">Контакты</h2>
+                </div>
+
+                <div class="footer__inner">
+                    <div class="footer__col col1">
+
+                        <div class="footer__logo" style="background-image: url({% static 'images/12345.png' %})"></div>
+                        <div class="footer__social">
+                            <div class="footer-text">
+                                Follow Us:</div>
+                            <div class="footer__social-icons">
+                                <a target="_blank" href="https://www.instagram.com/?hl=ru"><i
+                                        class="fa fa-3x fa-instagram"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/"><i
+                                        class="fa fa-3x fa-facebook-square"></i></a>
+                                <a target="_blank" href="https://twitter.com/?lang=ru"><i
+                                        class="fa fa-3x fa-twitter-square"></i>
+                            </div></a>
+                        </div>
+
+                    </div>
+
+                    <div class="footer__col">
+                        <div class="footer__adress">
+                            <div class="footer-title">Адресс</div>
+                            <div class="footer-text">ул. Сумская, 26 <br>Харьков, Украина</div>
+                        </div>
+                        <div class="footer__email">
+                            <div class="footer-title">E-mail</div>
+                            <div class="footer-text">afrodite@beauty.com<br>help_afrodite@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <div class="footer__col">
+                        <div class="footer__adress">
+                            <div class="footer-title">График работы</div>
+                            <div class="footer-text">ПН-СБ 9.00-21.00 <br> ВС 9.00-20.00 (по записи)</div>
+                        </div>
+                        <div class="footer__email">
+                            <div class="footer-title">Телефон</div>
+                            <div class="footer-text">0986745312<br>0674307854</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="copyright">
+                © 2021 Afrodite by AV-K
+            </div>
+        </footer>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

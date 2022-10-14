@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+<form method="post" action= {% url 'rubr' %}
+>
+<label>Наименование рубрики</label>
+<input type="text" name="rubricName"/>
+<br>
+<br>
+<label>Title</label>
+<input type="text" name="titleName"/>
+<br><br>
+<label>Content</label>
+<input type="text" name="contentName"/>
+<br>
+<br>
+<label>Price</label>
+<input type="text" name="priceName"/>
+<br>
+<br>
+<input type="submit" value="Отправить">
+</form>
+{% if rubrics %}
+<h1>Созданные рубрики</h1>
+{% for rr in rubrics %}
+<div>
+<p>Идентификатор рубрики: {{rr.id}} Наименование
+рубрики: {{rr.name}}</p>
+</div>
+{% endfor %}
+{% endif %}
+</body>
+</html>

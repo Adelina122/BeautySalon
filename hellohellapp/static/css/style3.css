@@ -1,0 +1,569 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *::before, *::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus, :active {
+    outline: none;
+}
+
+a:focus, a:active {
+    outline: none;
+}
+
+nav, footer, header, aside {
+    display: block;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+/*---------CONTAINER-------------------------------------------------*/
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: content-box;
+}
+
+/*---------ШАПКА-------------------------------------------------*/
+
+.header {
+    width: 100%;
+    padding-top: 10px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: rgba(230, 174, 195, 0.925);
+    z-index: 100;
+}
+
+.header__inner {
+    display: flex;
+    min-height: 70px;
+    align-items: center;
+    justify-content: center;
+}
+
+.top {
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.site__name {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 18px;
+    height: 10px;
+    font-weight: 600;
+    margin: 0 auto;
+}
+
+.header__logo {
+    display: flex;
+    flex: 0;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Zen Antique', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: inherit;
+}
+
+.head__img {
+    margin: auto 0;
+    max-width: 40x;
+    max-height: 40px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+/*    align-items: flex-end;*/
+    flex-wrap: nowrap;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    /*margin: 0 0 0 55%;*/
+}
+
+@media(max-width: 992px) {
+    .menu__list {
+        margin: 0 50px 0 0;
+    }
+}
+
+@media(max-width: 767px) {
+    .menu__list {
+        margin: 0 20px 0 0;
+    }
+}
+
+.menu a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.menu li {
+    position: relative;
+    list-style: none;
+}
+
+.menu__list {
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: end;
+}
+
+.menu__list>li {
+    /*применение только к выпадающему меню(первому уровню)*/
+    margin: 0 10px 0 0;
+    top: 5px;
+}
+
+.menu__list>li:hover .sub-menu__list {
+    display: block;
+}
+
+.menu__link {
+    color: #fff;
+}
+
+.menu__link:hover {
+    transition: color .1s linear;
+    color: #E2666B;
+}
+
+.menu__link.active1 {
+    text-decoration: underline 2px;
+    color: #E2666B;
+}
+
+.sub-menu__list {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 17px;
+    padding: 10px 0 0 0;
+}
+
+.sub-menu__list>li {
+    background-color: rgba(230, 174, 195, 0.925);
+}
+
+.sub-menu__link {
+    min-width: 140px;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.sub-menu__link:hover {
+    transition: color .1s linear;
+    color: #E2666B;
+}
+
+/*---------PAGE-------------------------------------------------*/
+
+.page {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    /*для установки логотипа*/
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/as6.jpg);
+    background-size: cover;
+}
+
+.page__inner {
+    width: 100%;
+    max-width: 50%;
+    margin: 35% auto 0;
+    float: right;
+    text-align: right;
+}
+
+.page__title {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.page__text {
+    margin: 0 0 50px 0;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 300;
+}
+
+/*---------SECTION-------------------------------------------------*/
+
+.section__header {
+    width: 100%;
+    max-width: 300px;
+    margin: 30px auto 70px;
+    text-align: center;
+}
+
+.section__title {
+    font-family: 'Montserrat', sans-serif;  
+    font-size: 35px;
+    font-weight: 500;
+}
+
+
+/*---------SLIDER-------------------------------------------------*/
+
+/* Собственно сам слайдер */
+
+
+.slide{
+    margin: 100px 0 0 0;
+}
+
+.slider {
+    max-width: 80%;
+    position: relative;
+    height: 400px;
+    margin: 0 auto 30px;
+}
+
+/* Картинка мастабируется по отношению к родительскому элементу */
+
+.slider .item img {
+    object-fit:cover;
+    width: 100%;
+    height: 400px;
+}
+
+/* Кнопки вперед и назад */
+
+.slider .prev, .slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.slider .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* При наведении на кнопки добавляем фон кнопок */
+
+.slider .prev:hover, .slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Заголовок слайда */
+
+.slideText {
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+    /* Выравнивание текста по горизонтали и по вертикали*/
+    left: 50%;
+    top: 50%;
+    width: 450px;
+    transform: translate(-50%, -50%);
+    /* Тень*/
+    text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+}
+
+/* Кружочки */
+
+.slider-dots {
+    text-align: center;
+}
+
+.slider-dots_item {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .slider-dots_item:hover {
+    background-color: #aaa;
+}
+
+/* Анимация слайдов */
+
+.slider .item {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+/*---------LIST-------------------------------------------------*/
+
+.list {
+    margin: 10% 0 50px 0;
+}
+
+.list__about {
+    margin: 0 25%;
+}
+
+.list__item {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 3%;
+}
+
+.list__icon {
+    width: 100%;
+    min-width: 32px;
+    background-size: cover;
+    margin-right: 3%;
+}
+
+/*---------LIST-------------------------------------------------*/
+
+.description {
+    vertical-align: bottom;
+    background-color: rgba(231, 127, 167, 0.5);
+    max-height: 300PX;
+    margin: 10% 0 20% 0;
+    display: flex;
+}
+
+.description__body {
+    margin: auto 10% auto 5%;
+    position: relative;
+    max-width: 350px;
+    text-align: left;
+}
+
+.description__title {
+    vertical-align: middle;
+    margin: 0 0 2% 0;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.description__image {
+    background-image: url(../img/i2.jpg);
+    background-size: contain;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+}
+
+.description__name {
+    font-size: 18px;
+    margin: 15px 5% 10%;
+    padding: 30px;
+}
+
+.description__name2 {
+    font-size: 18px;
+    margin: 0 5% 10%;
+    padding: 30px;
+    border: 2px solid rgba(230, 174, 195, 0.925);
+}
+
+/*---------FOOTER-------------------------------------------------*/
+
+.footer {
+    font-family: 'Zen Old Mincho', serif;
+    padding-top: 30px;
+    background-color: rgba(230, 174, 195, 0.925);
+}
+
+.footer__inner {
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer__col {
+    flex: 1;
+    display: inline-block;
+    width: 100%;
+    min-width: 250px;
+    text-align: center;
+}
+
+.footer__header {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto 30px;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.footer__logo {
+    background-image: url(../img/12345.png);
+    background-size: cover;
+    border-radius: 12px;
+    height: 90px;
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer__social {
+    margin-bottom: 50px;
+}
+
+.footer__social-text {
+    font-size: 18px;
+}
+
+.footer__social-icons {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer__social-icons i {
+    font-size: 30px;
+    padding: 10px;
+    text-shadow: 0px 6px 8px rgba(0, 0, 0, 0.6);
+    transition: all ease-in-out 150ms;
+    color: #fff;
+}
+
+.footer__social-icons i:hover {
+    margin-top: -3px;
+    text-shadow: 0px 14px 10px rgba(0, 0, 0, 0.4);
+}
+
+.footer-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.copyright {
+    padding: 10px 0;
+    border-top: 1px solid #000;
+    background-color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+

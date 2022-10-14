@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <title>О салоне</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
+    <link rel="icon" href="{% static 'images/icons1.png' %}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@100;300;400;500;600;700&family=Playfair+Display&family=Zen+Antique&family=Zen+Old+Mincho&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <!-- <div class="head">
+                    <img class="head__img" src="../pz2/img/crown2.png" alt="">
+                <div class="head__text">Beauty Salon</div>
+            </div> -->
+
+                <nav class="menu">
+                                    <div class="top">
+                    <a href="/" class="header__logo">
+                        <img class="head__img" src="{% static 'images/crown2.png' %}" alt="img">
+                        Afroditе
+                    </a>
+                </div>
+                    <ul class="menu__list">
+                        <li>
+                            <a href="/" class="menu__link">Главная</a>
+                        </li>
+                        <li><a class="menu__link active1">О салоне</a></li>
+                        <li><a href="/notmain" class="menu__link">Услуги</a></li>
+                        <li><a href="#" class="menu__link">Контакты</a>
+                            <ul class="sub-menu__list">
+                                <li><a href="#" class="sub-menu__link">Адрес</a></li>
+                                <li><a href="#" class="sub-menu__link">Телефон</a></li>
+                                <li><a href="/services" class="sub-menu__link">Для администрации</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="slide">
+            <div class="container">
+
+
+                <div class="section__header">
+                    <h2 class="section__title">Наши прически</h2>
+                </div>
+
+                <div class="slider">
+
+                    <div class="item">
+                        <img src="{% static 'images/slide11.jpg' %}" alt="Первый слайд">
+                        <div class="slideText">Свадебные прически</div>
+                    </div>
+
+                    <div class="item">
+                        <img src="{% static 'images/slide2.jpg' %}" alt="Второй слайд">
+                        <div class="slideText">Прически на выпускной</div>
+                    </div>
+
+                    <div class="item">
+                        <img src="{% static 'images/slide3.jpg' %}" alt="Третий слайд">
+                        <div class="slideText">Вечерние прически</div>
+                    </div>
+
+                    <a class="prev" onclick="minusSlide()">&#10094;</a>
+                    <a class="next" onclick="plusSlide()">&#10095;</a>
+                </div>
+                <br>
+
+                <div class="slider-dots">
+                    <span class="slider-dots_item" onclick="currentSlide(1)"></span>
+                    <span class="slider-dots_item" onclick="currentSlide(2)"></span>
+                    <span class="slider-dots_item" onclick="currentSlide(3)"></span>
+                </div>
+
+
+            </div>
+        </section>
+        <!-- 
+        <div class="page">
+            <div class="container">
+                <div class="page__inner">
+                    <div class="page__text">Чем мы отличаемся от других салонов красоты:</div>
+                </div>
+            </div>
+        </div> -->
+
+        <section class="section">
+            <div class="container">
+                <div class="list">
+                    <div class="page__text">Чем мы отличаемся от других салонов красоты:</div>
+
+                    <ul class="list__about">
+
+                        <li class="list__item">
+                            <span class="list__icon">
+                                <img src="{% static 'images/icons/check-mark2.png' %}" alt="">
+                            </span>
+                            <span class="list__text">18 лет опыта</span>
+                        </li>
+
+                        <li class="list__item">
+                            <span class="list__icon">
+                                <img src="{% static 'images/icons/skincare2.png' %}" alt="">
+                            </span>
+                            <span class="list__text">Косметика лучших мировых брендов</span>
+                        </li>
+
+                        <li class="list__item">
+                            <span class="list__icon">
+                                <img src="{% static 'images/icons/user2.png' %}" alt="">
+                            </span>
+                            <span class="list__text">Команда профессионалов</span>
+                        </li>
+
+                        <li class="list__item">
+                            <span class="list__icon">
+                                <img src="{% static 'images/icons/clean2.png' %}" alt="">
+                            </span>
+                            <span class="list__text">Безопасный сервис</span>
+                        </li>
+
+                        <li class="list__item">
+                            <span class="list__icon">
+                                <img src="{% static 'images/icons/diamond2.png' %}" alt="">
+                            </span>
+                            <span class="list__text">Паралельные и экспресс-услуги</span>
+                        </li>
+
+                        <li class="list__item">
+                            <span class="list__icon">
+                                <img src="{% static 'images/icons/flowerpot3.png' %}" alt="">
+                            </span>
+                            <span class="list__text">Стильный интерьер</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section">
+            <div class="container">
+                <div class="description">
+                    <div class="description__body">
+                        <div class="description__title">6 ЛЕТ ОПЫТА</div>
+                        <div class="description__text">С 2015 года салон красоты Afrodite успешно предоставляет услуги в
+                            области красоты и косметологии</div>
+                    </div>
+                    <div class="description__image" style="background-image: url({% static 'images/i2.jpg' %})">
+                        <!-- <img src="../pz2/img/interier.jpg" alt=""> -->
+                    </div>
+                </div>
+                <div class="description__name">
+                    Салон красоты Afrodite это салон с историей и многолетним опытом. Первый салон был создан в 2015
+                    году
+                    для модных и деловых людей, желающих выглядеть стильно, ухоженно и ценящих время. В наших салонах мы
+                    воплощаем лучшие тренды парикмахерского искусства , ногтевой эстетики и косметологии, в то же время
+                    уделяя особое внимание качеству и безопасности наших услуг, а также профессиональному росту наших
+                    специалистов. Главная наша цель – создавать красоту, учитывая индивидуальные потребности наших
+                    клиентов.
+                </div>
+
+                <div class="description__name2">
+                    Обладая знаниями и огромным опытом, мы понимаем, что парикмахерское искусство – это постоянная
+                    учеба. Сервис салонов красоты Afrodite отличается особенным подходом к каждому клиенту и самыми
+                    свежими
+                    предложениями как в стрижках и техниках окрашивания (Airtouch, Handtouch,…) так и в подборе
+                    косметических продуктов ( Loreal,Kerastase, Davines, Perricone, Obagi, … и многие другие)
+
+                    <br><br>А самое главное достижение это НАША КОМАНДА лучших парикмахеров в г.Киеве, лучших мастеров
+                    маникюра,
+                    педикюра и лучших косметологов, лучшие визажисты, которые всегда полны креативных идей, смелых
+                    планов, и ожиданий приятных встреч с нашими любимыми клиентами!
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+
+                <div class="footer__header">
+                    <h2 class="footer__title">Контакты</h2>
+                </div>
+
+                <div class="footer__inner">
+                    <div class="footer__col col1">
+
+                        <div class="footer__logo" style="background-image: url({% static 'images/12345.png' %})"></div>
+                        <div class="footer__social">
+                            <div class="footer-text">
+                                Follow Us:</div>
+                            <div class="footer__social-icons">
+                                <a target="_blank" href="https://www.instagram.com/?hl=ru"><i
+                                        class="fa fa-3x fa-instagram"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/"><i
+                                        class="fa fa-3x fa-facebook-square"></i></a>
+                                <a target="_blank" href="https://twitter.com/?lang=ru"><i
+                                        class="fa fa-3x fa-twitter-square"></i>
+                            </div></a>
+                        </div>
+                    </div>
+
+                    <div class="footer__col">
+                        <div class="footer__adress">
+                            <div class="footer-title">Адресс</div>
+                            <div class="footer-text">ул. Сумская, 26 <br>Харьков, Украина</div>
+                        </div>
+                        <div class="footer__email">
+                            <div class="footer-title">E-mail</div>
+                            <div class="footer-text">afrodite@beauty.com<br>help_afrodite@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <div class="footer__col">
+                        <div class="footer__adress">
+                            <div class="footer-title">График работы</div>
+                            <div class="footer-text">ПН-СБ 9.00-21.00 <br> ВС 9.00-20.00 (по записи)</div>
+                        </div>
+                        <div class="footer__email">
+                            <div class="footer-title">Телефон</div>
+                            <div class="footer-text">0986745312<br>0674307854</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="copyright">
+                © 2021 Afrodite by AV-K
+            </div>
+        </footer>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

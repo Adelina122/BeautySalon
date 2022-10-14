@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Administration</title>
+</head>
+<body>
+<!--        <h2>Bxoд</h2>-->
+        {% if user.is_authenticated %}
+<!--        <р>Вы уже выполнили вход.</р>-->
+        {% else %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="hidden" name="next" value="{{ next }}">
+            <input type="submit" vаluе="Войти">
+        </form>
+        {% endif %}
+        <br>
+            <form method="POST" novalidate>
+    {% csrf_token %}
+        <br>
+        <div>Добавление предоставляемых услуг</div>
+        <br>
+    <label>Имя мастера</label>
+    <select name="masterName" type="text" required="" id="id_master">
+        <option value="" selected="">Выберите мастера</option>
+            {% for master in masters %}
+            <option value="{{ master.id }}">{{ master.masterName }}</option>
+         {% endfor %}
+    </select>
+    <br>    <br>
+    <label>Название услуги</label>
+        <select name="title" type="text" required="" id="id_service">
+        <option value="" selected="">Выберите услугу</option>
+            {% for service in services %}
+            <option value="{{ service.id }}">{{ service.title }}</option>
+         {% endfor %}
+    </select>
+
+    <br>    <br>
+    <label>Цена</label>
+    <input type="text" name="price"/> грн
+
+    <br>    <br>
+                <label>Продолжительность услуги</label>
+    <input type="text" name="serviceTimesd"/> ч
+
+    <br>    <br>
+    <input type="submit" value="Отправить">
+    </form>
+
+    <br>    <br>
+</body>
+</html>
